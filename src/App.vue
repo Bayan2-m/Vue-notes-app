@@ -64,101 +64,198 @@ watch(
 </script>
 
 <style>
-body {
-  background: linear-gradient(120deg, #f5f7fa, #c3cfe2);
+/* ===================== RESET ===================== */
+
+/* ===================== RESET ===================== */
+
+* {
   margin: 0;
-  font-family: Arial, sans-serif;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* main card */
+/* ===================== BODY ===================== */
+
+body {
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(135deg, #eef2ff, #dbeafe);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 20px;
+}
+
+/* ===================== CARD ===================== */
+
 .card {
-  background: white;
-  text-align: center;
+  width: 100%;
+  max-width: 500px;
+
+  background: #ffffff;
+  border-radius: 18px;
+
   padding: 30px;
-  margin: 50px auto;
-  border-radius: 20px;
-  width: 420px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
 }
 
-/* title */
+/* ===================== TITLE ===================== */
+
 h1 {
-  font-size: 26px;
-  margin-bottom: 20px;
+  text-align: center;
   color: #333;
+  margin-bottom: 25px;
+  font-size: 2rem;
 }
 
-/* input */
+/* ===================== INPUT ===================== */
+
 input {
-  width: 85%;
-  padding: 12px;
+  width: 100%;
+  padding: 14px;
+
+  border: 1px solid #d1d5db;
   border-radius: 12px;
-  border: 1px solid #ddd;
+
   outline: none;
-  margin-bottom: 15px;
-  font-size: 14px;
+
+  font-size: 15px;
+
+  transition: 0.3s;
 }
 
 input:focus {
-  border-color: #6c63ff;
-  box-shadow: 0 0 5px rgba(108, 99, 255, 0.3);
+  border-color: #6366f1;
+  box-shadow: 0 0 8px rgba(99, 102, 241, 0.3);
 }
 
-/* buttons */
+/* ===================== BUTTON ===================== */
+
 button {
-  padding: 10px 18px;
-  margin: 10px;
+  width: 100%;
+  margin-top: 15px;
+
+  padding: 13px;
+
   border: none;
-  border-radius: 10px;
-  background: #6c63ff;
+  border-radius: 12px;
+
+  background: #6366f1;
   color: white;
+
+  font-size: 15px;
+  font-weight: bold;
+
   cursor: pointer;
   transition: 0.3s;
 }
 
 button:hover {
-  background: #574fd6;
+  background: #4f46e5;
 }
 
-/* note card */
+/* ===================== NOTES ===================== */
+
 .note-card {
-  background: #f9f9f9;
-  margin: 10px auto;
+  margin-top: 18px;
+
   padding: 15px;
+
+  background: #f8fafc;
+
+  border-left: 5px solid #6366f1;
   border-radius: 12px;
-  width: 90%;
-  text-align: left;
-  border-left: 4px solid #6c63ff;
+
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  transition: 0.2s;
+
+  transition: 0.25s;
 }
 
 .note-card:hover {
-  transform: scale(1.02);
+  transform: translateY(-3px);
 }
 
-/* inside note layout */
 .note-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
 
 .text {
-  margin: 0;
   flex: 1;
+  color: #333;
+  line-height: 1.5;
   word-break: break-word;
 }
 
-/* delete button */
+/* ===================== DELETE BUTTON ===================== */
+
 .delete-btn {
-  background: #ff4d4d;
+  width: auto;
+
+  margin-top: 0;
+
+  padding: 8px 14px;
+
+  background: #ef4444;
   color: white;
-  border: none;
-  padding: 6px 12px;
+
   border-radius: 8px;
-  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background: #dc2626;
+}
+
+/* ===================== TABLET ===================== */
+
+@media (max-width: 768px) {
+  .card {
+    max-width: 90%;
+    padding: 25px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+}
+
+/* ===================== MOBILE ===================== */
+
+@media (max-width: 480px) {
+  body {
+    padding: 15px;
+  }
+
+  .card {
+    max-width: 100%;
+    padding: 20px;
+    border-radius: 15px;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  input,
+  button {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .note-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .delete-btn {
+    width: 100%;
+    margin-top: 10px;
+  }
 }
 
 </style>
